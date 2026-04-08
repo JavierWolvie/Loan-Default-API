@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
-import pickle
+import joblib
 import os
 
 app = Flask(__name__)
 
-model = pickle.load(open("loan_default_model.pkl", "rb"))
+model = joblib.load("loan_default_model.pkl")
 
 @app.route("/")
 def home():
