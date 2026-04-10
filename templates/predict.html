@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predict</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e293b, #020617);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+}
+
+/* Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+/* Card */
+.card {
+    width: 420px;
+    padding: 35px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: none;
+    background: #0f172a;
+    color: white;
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Result */
+.result {
+    margin-top: 25px;
+}
+
+.result h3 {
+    margin-bottom: 5px;
+}
+
+.low {
+    color: #22c55e;
+}
+
+.high {
+    color: #ef4444;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>LoanPredict</h2>
+    <a href="/" style="color:white;text-decoration:none;">Home</a>
+</div>
+
+<!-- Form -->
+<div class="container">
+    <div class="card">
+
+        <h2>Loan Risk Prediction</h2>
+
+        <form method="POST">
+            <input name="income" type="number" step="any" placeholder="Income" required>
+            <input name="loan_amount" type="number" step="any" placeholder="Loan Amount" required>
+            <input name="credit_score" type="number" step="any" placeholder="Credit Score" required>
+            <input name="age" type="number" step="any" placeholder="Age" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <h3 class="{% if 'High' in prediction %}high{% else %}low{% endif %}">
+                {{ prediction }}
+            </h3>
+            <p>Probability: {{ probability }}</p>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>

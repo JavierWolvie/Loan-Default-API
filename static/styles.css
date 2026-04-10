@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #0a192f;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(to right, #007BFF, #00c6ff);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero a {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: white;
+    color: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.feature {
+    width: 30%;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: #0a192f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Form */
+.form-container {
+    text-align: center;
+    padding: 50px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Result */
+.result {
+    margin-top: 20px;
+    font-size: 20px;
+}
